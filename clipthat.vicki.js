@@ -8,31 +8,31 @@
 // ==/VickiScript==
 
 $vs.listen('crypt dot', async (req, res) => {
-    handleF8KeyPress(req, res);
+    await handleCommand(req, res);
 });
 
 $vs.listen('quit', async (req, res) => {
-    handleF8KeyPress(req, res);
+    await handleCommand(req, res);
 });
 
 $vs.listen('clip', async (req, res) => {
-    handleF8KeyPress(req, res);
+    await handleCommand(req, res);
 });
 
 $vs.listen('quit that', async (req, res) => {
-    handleF8KeyPress(req, res);
+    await handleCommand(req, res);
 });
 
 $vs.listen('clip that', async (req, res) => {
-    handleF8KeyPress(req, res);
+    await handleCommand(req, res);
 });
 
-async function handleF8KeyPress(req, res) {
+async function handleCommand(req, res) {
     $vs.native.assertAvailable();
 
     // Simulate pressing F8 key
     await $vs.native.keyboard.click("{F8}");
 
-    // Respond to the user with an empty string
-    res.say('').send();
+    // Respond to the user with nothing
+    res.say(' ').send();
 }
